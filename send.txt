@@ -1,0 +1,42 @@
+import java.util.*;
+
+class Cal
+{ 
+ int a=5;int b=7;  //variables in superclass
+ Cal(int x,int y) //constructor in super class or parent class
+  {
+    a=x;
+    b=y;
+   }
+  void add()  //method in super class
+  {
+   int c;
+   c=a+b;
+  
+  System.out.println("addition of a and b is:" +c);
+  }
+}
+
+class Cal_1 extends Cal
+ {   
+     int c;
+     int a=30;int b=80;
+     Cal_1() //constructor in sub class or child class
+      {
+      super(20,60);
+      System.out.println("this is constructor in child class");
+      }
+     void add() //method for subclass
+      {
+        super.add();
+        c=a+b;
+        System.out.println("Addition of a and b is:" +c);
+      }
+public void main(String args[])
+ { 
+  Cal_1 c1= new Cal_1();
+  c1.add();
+  System.out.println("In super class a and b is" +super.a+ " " +super.b);
+  System.out.println("In sub class a and b is" +a+ " " +b);
+ }
+}
